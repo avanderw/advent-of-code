@@ -6,41 +6,74 @@ import java.util.List;
 
 public class Day09 {
     public static void main(String[] args) {
-        Integer totalMarbles = 25;
-        Integer playerCount = 9;
+        Integer totalMarbles = 70769*100;
+        Integer playerCount = 418;
 
-        List<Integer> playerScores = new ArrayList<>();
+        List<Long> playerScores = new ArrayList<>();
         for (int i = 0; i < playerCount; i++) {
-            playerScores.add(0);
+            playerScores.add(0L);
         }
-        List<Integer> marbleCircle = new ArrayList<>();
-        marbleCircle.add(0);
+        Node start = new Node(null, 0, null);
+        start.next = start;
+        start.prev = start;
 
+        Node currentMarble = start;
         Integer playerIdx = 0;
-        Integer markerIdx = 0;
         Integer marbleIdx = 0;
-        while (marbleIdx <= totalMarbles) {
+        while (marbleIdx < totalMarbles) {
             marbleIdx++;
+            currentMarble = currentMarble.next;
 
-            markerIdx+=2;
-            markerIdx%=marbleCircle.size();
-            if (markerIdx == 0) {
-                markerIdx = marbleCircle.size();
-            }
-            marbleCircle.add(markerIdx, marbleIdx);
-
-            System.out.print(String.format("[%s] ", playerIdx));
-            for (int i =0; i<marbleCircle.size(); i++) {
-                if (i == markerIdx) {
-                    System.out.print(String.format("(%s) ", marbleCircle.get(i)));
-                } else {
-                    System.out.print(String.format(" %s  ", marbleCircle.get(i)));
+            if (marbleIdx % 23 != 0) {
+                Node insert = new Node(currentMarble, marbleIdx, currentMarble.next);
+                currentMarble.next.prev = insert;
+                currentMarble.next = insert;
+                currentMarble = insert;
+            } else{
+                playerScores.set(playerIdx, playerScores.get(playerIdx) + marbleIdx);
+                for (int i = 0; i < 8;i++) {
+                    currentMarble = currentMarble.prev;
                 }
+                currentMarble.prev.next = currentMarble.next;
+                currentMarble.next.prev = currentMarble.prev;
+                playerScores.set(playerIdx, playerScores.get(playerIdx) + currentMarble.value);
+                currentMarble = currentMarble.next;
             }
-            System.out.println();
+
+//            Node loop = start;
+//            Boolean started= false;
+//            System.out.print(String.format("[%s] ", playerIdx));
+//            while (loop != start || !started) {
+//                started= true;
+//                if (loop == currentMarble) {
+//                    System.out.print(String.format("(%s) ", loop.value));
+//                } else {
+//                    System.out.print(String.format(" %s  ", loop.value));
+//                }
+//                loop = loop.next;
+//            }
+//            System.out.println();
 
             playerIdx++;
             playerIdx%=playerCount;
+        }
+
+        System.out.println(playerScores.stream().mapToLong(s->s).max());
+    }
+
+    static class Node {
+        Integer value;
+        Node next;
+        Node prev;
+
+        Node(Node prev, Integer value, Node next) {
+            this.prev = prev;
+            this.value = value;
+            this.next = next;
+        }
+
+        public String toString() {
+            return value.toString();
         }
     }
 }
