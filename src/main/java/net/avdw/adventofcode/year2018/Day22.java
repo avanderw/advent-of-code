@@ -1,15 +1,13 @@
 package net.avdw.adventofcode.year2018;
 
-import com.sun.istack.internal.NotNull;
-
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Day22 {
     static Map<Type, Set<Gear>> restrictions = new HashMap<>();
-    static Map<Transition, Gear> transitionGear = new HashMap<>();
     static Set<Node> toProcess = new HashSet<>();
+    static Map<Transition, Gear> transitionGear = new HashMap<>();
 
     public static void main(String[] args) {
 //        final long depth = 9171;
@@ -154,6 +152,24 @@ public class Day22 {
         }
     }
 
+    private static void print(long[][] data) {
+        for (int y = 0; y < data.length; y++) {
+            for (int x = 0; x < data[0].length; x++) {
+                System.out.print(String.format("%10s", data[y][x]));
+            }
+            System.out.println();
+        }
+    }
+
+    private static void print(BigInteger[][] data) {
+        for (int y = 0; y < data.length; y++) {
+            for (int x = 0; x < data[0].length; x++) {
+                System.out.print(String.format("%20s", data[y][x]));
+            }
+            System.out.println();
+        }
+    }
+
     enum Type {ROCKY, WATER, NARROW}
 
     enum Gear {CLIMBING, NOTHING, TORCH}
@@ -190,17 +206,6 @@ public class Day22 {
         Gear gear;
         Type type;
 
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "x=" + x +
-                    ", y=" + y +
-                    ", distance=" + distance +
-                    ", gear=" + gear +
-                    ", type=" + type +
-                    '}';
-        }
-
         public Node(int x, int y, Type type) {
             this.x = x;
             this.y = y;
@@ -221,23 +226,16 @@ public class Day22 {
             return Objects.hash(x, y);
         }
 
-    }
-
-    private static void print(long[][] data) {
-        for (int y = 0; y < data.length; y++) {
-            for (int x = 0; x < data[0].length; x++) {
-                System.out.print(String.format("%10s", data[y][x]));
-            }
-            System.out.println();
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    ", distance=" + distance +
+                    ", gear=" + gear +
+                    ", type=" + type +
+                    '}';
         }
-    }
 
-    private static void print(BigInteger[][] data) {
-        for (int y = 0; y < data.length; y++) {
-            for (int x = 0; x < data[0].length; x++) {
-                System.out.print(String.format("%20s", data[y][x]));
-            }
-            System.out.println();
-        }
     }
 }

@@ -1,13 +1,16 @@
 package net.avdw.adventofcode.year2018;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Day13 {
@@ -113,10 +116,16 @@ public class Day13 {
 
                 for (Vehicle other : vehicleList) {
                     if (!vehicle.equals(other) && vehicle.position.equals(other.position)) {
-                        if (!crashedVehicles.contains(vehicle)) {crashedVehicles.add(vehicle);}
-                        if (!crashedVehicles.contains(other)){crashedVehicles.add(other);}
+                        if (!crashedVehicles.contains(vehicle)) {
+                            crashedVehicles.add(vehicle);
+                        }
+                        if (!crashedVehicles.contains(other)) {
+                            crashedVehicles.add(other);
+                        }
                         crashDetected = Boolean.TRUE;
-                        if (firstCrashPosition == null) {firstCrashPosition = vehicle.position;}
+                        if (firstCrashPosition == null) {
+                            firstCrashPosition = vehicle.position;
+                        }
                         System.out.println(String.format("vehicle (%s) crashed with other (%s)", vehicle, other));
                     }
                 }
@@ -148,9 +157,9 @@ public class Day13 {
 
     static class Vehicle {
         private Integer id;
-        private Vector2D velocity;
         private Vector2D position;
         private Integer turnState = 0; // 0 = left, 1 = straight, 2 = right
+        private Vector2D velocity;
 
         Vehicle(Integer id, Vector2D velocity, Vector2D position) {
             this.id = id;
@@ -158,12 +167,12 @@ public class Day13 {
             this.position = position;
         }
 
-        public String toString() {
-            return String.format("#%s=%s, %s:%s", id, position, velocity, map[(int) position.getY()][(int) position.getX()]);
-        }
-
         public void move() {
             position = position.add(velocity);
+        }
+
+        public String toString() {
+            return String.format("#%s=%s, %s:%s", id, position, velocity, map[(int) position.getY()][(int) position.getX()]);
         }
     }
 }
