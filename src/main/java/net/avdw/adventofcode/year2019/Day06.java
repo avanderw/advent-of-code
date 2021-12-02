@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.apache.commons.lang3.StringUtils;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.Logger;
@@ -13,7 +12,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Day06 {
     public static void main(String[] args) throws FileNotFoundException {
-        LoggingActivator.activate();
         Logger.getConfiguration().level(Level.DEBUG).activate();
         URL inputUrl = Day01.class.getResource("day06.txt");
         Scanner scanner = new Scanner(new File(inputUrl.getFile()));

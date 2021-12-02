@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.apache.commons.lang3.StringUtils;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.Logger;
@@ -20,9 +19,8 @@ import java.util.function.Supplier;
 public class Day05 {
     public static void main(String[] args) throws FileNotFoundException {
         Supplier<Integer> inputStream = () -> 5;
-        Consumer<Integer> outputStream = (output)->Logger.info("= {}", output);
+        Consumer<Integer> outputStream = (output) -> Logger.info("= {}", output);
 
-        LoggingActivator.activate();
         Logger.getConfiguration().level(Level.INFO).activate();
         runProgram(Arrays.asList(3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8), inputStream, outputStream);
         runProgram(Arrays.asList(3, 9, 7, 9, 10, 9, 4, 9, 99, -1, 8), inputStream, outputStream);
@@ -55,7 +53,7 @@ public class Day05 {
         OpCodeType opCodeType = OpCodeType.BEGIN;
         while (opCodeType != OpCodeType.EXIT) {
             Integer instruction = mem[ip];
-            int mode = Integer.parseInt(StringUtils.leftPad("" + instruction, 5,"0").substring(0, 3));
+            int mode = Integer.parseInt(StringUtils.leftPad("" + instruction, 5, "0").substring(0, 3));
             Logger.debug("INSTRUCTION: {}", instruction);
             opCodeType = OpCodeType.get(instruction % 100);
 

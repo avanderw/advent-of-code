@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.Logger;
 
@@ -14,8 +13,6 @@ import java.util.Scanner;
 
 public class Day02 {
     public static void main(String[] args) throws FileNotFoundException {
-        LoggingActivator.activate();
-
         Logger.debug(runProgram(Arrays.asList(1, 0, 0, 0, 99)));
         Logger.debug(runProgram(Arrays.asList(2, 3, 0, 3, 99)));
         Logger.debug(runProgram(Arrays.asList(2, 4, 4, 5, 99, 0)));
@@ -34,8 +31,8 @@ public class Day02 {
         scanner.close();
 
         Logger.info("---< Part 2 >---");
-        for (int a = 0; a  < 100; a++) {
-            for (int b = 0;  b< 100; b++) {
+        for (int a = 0; a < 100; a++) {
+            for (int b = 0; b < 100; b++) {
                 program.set(1, a);
                 program.set(2, b);
                 List<Integer> runResults = runProgram(new ArrayList<>(program));

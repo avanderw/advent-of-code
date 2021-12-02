@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.Logger;
 
@@ -12,8 +11,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Day04 {
     public static void main(String[] args) {
-        LoggingActivator.activate();
-
         meetsCriteria(111111);
         meetsCriteria(112233);
         meetsCriteria(111122);

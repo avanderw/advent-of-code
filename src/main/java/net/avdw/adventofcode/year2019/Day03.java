@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.pmw.tinylog.Logger;
 
 import java.io.File;
@@ -11,8 +10,6 @@ import java.util.function.Function;
 
 public class Day03 {
     public static void main(String[] args) throws FileNotFoundException {
-        LoggingActivator.activate();
-
         Coordinate origin = new Coordinate(0, 0);
 
         List<List<Coordinate>> paths = new ArrayList<>();

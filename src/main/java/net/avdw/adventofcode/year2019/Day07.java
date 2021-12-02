@@ -1,6 +1,5 @@
 package net.avdw.adventofcode.year2019;
 
-import net.avdw.adventofcode.LoggingActivator;
 import org.apache.commons.collections4.iterators.PermutationIterator;
 import org.pmw.tinylog.Level;
 import org.pmw.tinylog.Logger;
@@ -12,7 +11,6 @@ import java.util.function.Supplier;
 
 public class Day07 {
     public static void main(String[] args) {
-        LoggingActivator.activate();
         Logger.getConfiguration().level(Level.INFO).activate();
 
         Logger.info("Final output = {}", maxAmplification(Arrays.asList(3, 26, 1001, 26, -4, 26, 3, 27, 1002, 27, 2, 27, 1, 27, 26, 27, 4, 27, 1001, 28, -1, 28, 1005, 28, 6, 99, 0, 0, 5)));
