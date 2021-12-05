@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class Day03 extends Day {
     public static void main(String[] args) {
-        Runner.run(new Day03());
+        Runner.run(new Day03(), 5000);
     }
 
     @SneakyThrows

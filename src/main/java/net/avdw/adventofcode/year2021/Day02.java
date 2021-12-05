@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Day02 extends Day {
     public static void main(String[] args) {
-        Runner.run(new Day02());
+        Runner.run(new Day02(), 5000);
     }
 
     @SneakyThrows

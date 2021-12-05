@@ -19,8 +19,4 @@ public class Profiler {
         System.out.printf("      min: %,.0f μs, max: %,.0f μs%n", statistics.getMin() / 1000, statistics.getMax() / 1000);
         System.out.printf("   median: %,.0f μs, skewness: %,.0f μs, kurtosis: %,.0f μs%n", statistics.getPercentile(.5) / 1000, statistics.getSkewness() / 1000, statistics.getKurtosis() / 1000);
     }
-
-    public static void run(Runnable runnable) {
-        Profiler.profile(runnable, 5000);
-    }
 }
