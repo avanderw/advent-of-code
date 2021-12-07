@@ -4,9 +4,7 @@ import lombok.SneakyThrows;
 import net.avdw.adventofcode.Day;
 import net.avdw.adventofcode.Runner;
 
-import java.math.BigInteger;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Day06 extends Day {
     public static void main(String[] args) {

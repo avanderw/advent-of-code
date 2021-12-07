@@ -5,11 +5,8 @@ import net.avdw.adventofcode.Day;
 import net.avdw.adventofcode.Runner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 
 public class Day04 extends Day {
     public static void main(String[] args) {

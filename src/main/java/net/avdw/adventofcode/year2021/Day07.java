@@ -3,7 +3,6 @@ package net.avdw.adventofcode.year2021;
 import lombok.SneakyThrows;
 import net.avdw.adventofcode.Day;
 import net.avdw.adventofcode.Runner;
-import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import java.util.*;
 

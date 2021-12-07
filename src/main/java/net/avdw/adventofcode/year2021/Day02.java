@@ -2,7 +2,6 @@ package net.avdw.adventofcode.year2021;
 
 import lombok.SneakyThrows;
 import net.avdw.adventofcode.Day;
-import net.avdw.adventofcode.Profiler;
 import net.avdw.adventofcode.Runner;
 
 import java.util.Scanner;
