@@ -49,7 +49,6 @@ public class Day12 extends Day {
     private int traverse(Node node, List<Node> path, BiFunction<Node, List<Node>, Boolean> canTraverse) {
         path.add(node);
         if (node.equals(end)) {
-//            System.out.println(path);
             return 1;
         } else {
             int ends = 0;
