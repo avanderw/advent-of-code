@@ -1,5 +1,4 @@
 # Day template
 
-Templates as a base to start each day of the Advent calendar.
-Provided in different languages.
-The templates handle input files and test cases.
+Base templates to start each day of the Advent calendar.
+These templates are provided in different languages to handle input, test cases, and benchmarking.
