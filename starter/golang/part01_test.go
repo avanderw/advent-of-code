@@ -1,0 +1,38 @@
+package main
+
+import (
+	"testing"
+)
+
+func TestPart01(t *testing.T) {
+	var cases = []struct {
+		name, in string
+		want     int64
+	}{
+		{"basic", "input_test.txt", 0},
+	}
+
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			in, err := input(c.in)
+			if err != nil {
+				t.Fatal(err)
+			}
+			got := part01(in)
+			if got != c.want {
+				t.Fatalf("file %s, got %d, want %d", c.in, got, c.want)
+			}
+		})
+	}
+}
+
+func BenchmarkPart01(b *testing.B) {
+	in, err := input("input.txt")
+	if err != nil {
+		b.Fatal(err)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		part01(in)
+	}
+}
