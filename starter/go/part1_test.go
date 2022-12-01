@@ -7,9 +7,9 @@ import (
 func TestPart1(t *testing.T) {
 	var cases = []struct {
 		name, in string
-		want     int64
+		want     string
 	}{
-		{"basic", "input_test.txt", 0},
+		{"basic", "input_test.txt", "0"},
 	}
 
 	for _, c := range cases {
@@ -20,7 +20,7 @@ func TestPart1(t *testing.T) {
 			}
 			got := part1(in)
 			if got != c.want {
-				t.Fatalf("file %s, got %d, want %d", c.in, got, c.want)
+				t.Fatalf("file %s, got %s, want %s", c.in, got, c.want)
 			}
 		})
 	}

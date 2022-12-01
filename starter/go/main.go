@@ -17,8 +17,8 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Part 1: %d\n", part1(in))
-	fmt.Printf("Part 2: %d\n", part2(in))
+	fmt.Printf("Part 1: %s\n", part1(in))
+	fmt.Printf("Part 2: %s\n", part2(in))
 	return nil
 }
 
