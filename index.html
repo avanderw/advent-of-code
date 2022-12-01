@@ -27,26 +27,36 @@
         <section>
             <h2>2022</h2>
             <p>
-                // Describe the objective for 2022
+                This year we had to ensure the reindeer get a grove.
+                The grove has star fruit which provides enough magical energy to deliver the presents.
+                We start an expedition to retrieve a minimum of fifty stars by December 25th.
             </p>
             <h3>Day 01</h3>
             <p>
-                // Describe the puzzle
+                <label for="22-1" class="margin-toggle">&#8853;</label>
+                <input type="checkbox" id="22-1" class="margin-toggle"/>
+                <span class="marginnote">
+                    <a href="https://github.com/avanderw/advent-of-code/tree/master/2022/01/go">Go solution</a>
+                </span>
+                The first day the Elves started hiking to the grove.
+                They were carrying food with them.
+                We had to find the largest basket of calories.
+                My first attempt was written in golang.
+                It was a pleasure to write.
+                I was done in under 10 minutes.
             </p>
             <p>
-                // Describe the solution
-            </p>
-            <p>
-                // Describe the code
-            </p>
-            <p>
-                // Describe the learnings
-            </p>
-            <p>
-                // Describe the improvements
-            </p>
-            <p>
-                // Describe the next steps
+                <pre><code>
+$ go test -bench .
+goos: windows
+goarch: amd64
+pkg: avanderw.co.za/advent-of-code
+cpu: Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz
+BenchmarkPart1-12          14538             82469 ns/op
+BenchmarkPart2-12          12218             97585 ns/op
+PASS
+ok      avanderw.co.za/advent-of-code   4.330s                    
+                </code></pre>
             </p>
         </section>
     </article>
