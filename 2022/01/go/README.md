@@ -1,4 +1,4 @@
-# Advent of code 2022/01 in Golang
+# 2022/01 in Golang
 
 ## Usage
 
