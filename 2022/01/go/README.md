@@ -11,7 +11,7 @@
 | `go test -bench Part2` | will run the benchmarks for the current day's second part. |
 
 
-# Performance
+## Performance
 
 ```
 $ go test -bench .
