@@ -1,4 +1,4 @@
-# Golang 2022/09 in Go
+# Advent of Code 2022 - Day 9: Rope Bridge
 
 ## Usage
 

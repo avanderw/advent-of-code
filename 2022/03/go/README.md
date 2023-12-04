@@ -1,4 +1,4 @@
-# 2022/03 in Golang
+# Advent of Code 2022 - Day 3: Rucksack Reorganization
 
 ## Usage
 

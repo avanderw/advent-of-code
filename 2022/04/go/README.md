@@ -1,4 +1,4 @@
-# 2022/04 in Golang
+# Advent of Code 2022 - Day 4: Camp Cleanup
 
 ## Usage
 

@@ -1,4 +1,4 @@
-# 2022/05 in Golang
+# Advent of Code 2022 - Day 5: Supply Stacks
 
 ## Usage
 

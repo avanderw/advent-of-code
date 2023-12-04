@@ -1,4 +1,4 @@
-# 2022/06 in Golang
+# Advent of Code 2022 - Day 6: Tuning Trouble
 
 ## Usage
 

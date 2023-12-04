@@ -1,4 +1,4 @@
-# 2022/08 in Go
+# Advent of Code 2022 - Day 8: Treetop Tree House
 
 ## Usage
 
