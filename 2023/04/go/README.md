@@ -16,12 +16,12 @@
 $ go test -bench .
 goos: windows
 goarch: amd64
-pkg: avanderw.co.za/advent-of-code
-cpu: Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz
-BenchmarkPart1-12           3163            385960 ns/op
-BenchmarkPart2-12           2583            471976 ns/op
+pkg: github.com/avanderw/advent-of-code/2023/04
+cpu: Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz   
+BenchmarkPart1-12           3109            390071 ns/op
+BenchmarkPart2-12           2725            460035 ns/op
 PASS
-ok      avanderw.co.za/advent-of-code   2.668s
+ok      github.com/avanderw/advent-of-code/2023/04      2.686s
 ```
 
 ## Learnings
