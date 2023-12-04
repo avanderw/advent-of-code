@@ -4,12 +4,23 @@ import (
 	"testing"
 )
 
+func BenchmarkPart2(b *testing.B) {
+	in, err := input("main.txt")
+	if err != nil {
+		b.Fatal(err)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		part2(in)
+	}
+}
+
 func TestPart2(t *testing.T) {
 	var cases = []struct {
 		name, in string
 		want     string
 	}{
-		{"basic", "input_test.txt", "0"},
+		{"basic", "part2.txt", "0"},
 	}
 
 	for _, c := range cases {
@@ -23,16 +34,5 @@ func TestPart2(t *testing.T) {
 				t.Fatalf("file %s, got %s, want %s", c.in, got, c.want)
 			}
 		})
-	}
-}
-
-func BenchmarkPart2(b *testing.B) {
-	in, err := input("input.txt")
-	if err != nil {
-		b.Fatal(err)
-	}
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		part2(in)
 	}
 }

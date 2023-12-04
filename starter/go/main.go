@@ -13,7 +13,7 @@ func main() {
 }
 
 func run() error {
-	in, err := input("input.txt")
+	in, err := input("main.txt")
 	if err != nil {
 		return err
 	}
