@@ -20,7 +20,7 @@ func TestPart1(t *testing.T) {
 		name, input string
 		want        string
 	}{
-		{"basic", "part1.txt", "0"},
+		{"basic", "part1.txt", "2"},
 	}
 
 	for _, c := range cases {

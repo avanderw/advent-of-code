@@ -13,16 +13,16 @@ func main() {
 }
 
 func run() error {
-	input, err := readInput("main.txt")
+	in, err := input("main.txt")
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Part 1: %s\n", solvePart1(input))
-	fmt.Printf("Part 2: %s\n", solvePart2(input))
+	fmt.Printf("Part 1: %s\n", part1(in))
+	fmt.Printf("Part 2: %s\n", part2(in))
 	return nil
 }
 
-func readInput(path string) (string, error) {
+func input(path string) (string, error) {
 	buf, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
